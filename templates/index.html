@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Streamer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Playlist</h2>
+            <ul id="playlist">
+                <a>Loading...</a>
+            </ul>
+        </aside>
+
+        <main class="player">
+            <div class="now-playing">
+                <img id="now-playing-image" src="{{ url_for('static', filename='default-icon.png') }}" alt="Now Playing">
+                <h2 id="now-playing-title">Loading...</h2>
+				<div id="now-playing-sub-title">Loading...</div>
+            </div>
+
+            <audio id="audioPlayer" controls></audio>
+
+            <div class="controls">
+                <button id="nextButton" class="active"><i class="fas fa-forward-step"></i></button>
+                <button id="shuffleButton"><i class="fas fa-random"></i></button>
+                <button id="loopButton"><i class="fas fa-sync-alt"></i></button>
+            </div>
+        </main>
+    </div>
+
+	<script src="{{ url_for('static', filename='jsmediatags.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
